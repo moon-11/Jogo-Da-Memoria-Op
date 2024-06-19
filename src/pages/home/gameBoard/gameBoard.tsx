@@ -10,7 +10,7 @@ const GameBoard: React.FC = () => {
   const [firstChoice, setFirstChoice] = useState<CardType | null>(null);
   const [secondChoice, setSecondChoice] = useState<CardType | null>(null);
   const [disabled, setDisabled] = useState(false);
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState<string>("0");
   const [isActive, setIsActive] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
@@ -25,7 +25,7 @@ const GameBoard: React.FC = () => {
     let timer: NodeJS.Timeout;
     if (isActive) {
       timer = setInterval(() => {
-        setTime((prevTime) => prevTime + 1);
+        setTime((prevTime) => (prevTime + 1).toString());
       }, 1000);
     }
     return () => clearInterval(timer);
@@ -91,7 +91,7 @@ const GameBoard: React.FC = () => {
           />
         ))}
       </div>
-      {showModal && <Modal time={time} onReset={resetGame} />}
+      {showModal && <Modal time={time.toString()} onReset={resetGame} />}
     </div>
   );
 };
