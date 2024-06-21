@@ -1,5 +1,4 @@
-// models/cardModels.ts
-export interface CardType {
+export default interface CardType {
   id: number | string;
   name: string;
   image: string;
