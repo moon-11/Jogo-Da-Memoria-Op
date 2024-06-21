@@ -1,7 +1,7 @@
 import './styles.scss';
 
 interface ModalProps {
-  time: number;
+  time: string;
   onReset: () => void;
 }
 

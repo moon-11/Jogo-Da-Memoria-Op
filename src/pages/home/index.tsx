@@ -43,13 +43,19 @@ export default function Home() {
     setCards(shuffledCards);
   };
 
+  function formattTimer(time: number) {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  }
+
   return (
     <div className='page'>
       <div className='game-board'>
-        <div className='timer'>{`Time: ${time}s`}</div>
+        <div className='timer'>{`Time: ${formattTimer(time)}`}</div>
         <GameBoard cards={cards} setCards={setCards} />
       </div>
-      {showModal && <Modal time={time} onReset={resetGame} />}
+      {showModal && <Modal time={formattTimer(time)} onReset={resetGame} />}
     </div>
   );
 }

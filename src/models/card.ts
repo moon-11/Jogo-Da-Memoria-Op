@@ -3,6 +3,4 @@ export default interface CardType {
   name: string;
   image: string;
   matched: boolean;
-  backImage: string;
-  frontImage: string;
 }

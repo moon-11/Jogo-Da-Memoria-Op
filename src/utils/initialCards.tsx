@@ -17,85 +17,59 @@ export const initialCards: CardType[] = [
     name: 'Luffy',
     image: Luffy,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 2,
     name: 'Zoro',
     image: Zoro,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 3,
     name: 'Vivi',
     image: Vivi,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 4,
     name: 'Usopp',
     image: Usopp,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 5,
     name: 'Shanks',
     image: Shanks,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 6,
     name: 'Sanji',
     image: Sanji,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 7,
     name: 'Robin',
     image: Robin,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 8,
     name: 'Nami',
     image: Nami,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 9,
     name: 'Luffy2',
     image: Luffy2,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
   {
     id: 10,
     name: 'Chopper',
     image: Chopper,
     matched: false,
-    frontImage: '',
-    backImage: '',
   },
 ];
-
-const cards: CardType[] = [];
-initialCards.forEach((card) => {
-  cards.push({ ...card });
-  cards.push({ ...card });
-});
