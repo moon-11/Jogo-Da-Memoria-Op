@@ -5,6 +5,8 @@ import Modal from "../modal";
 import initialCards from "../utils/initialCards";
 import "./styles.scss";
 
+type Timeout = ReturnType<typeof setTimeout>;
+
 const GameBoard: React.FC = () => {
   const [cards, setCards] = useState<CardType[]>([]);
   const [firstChoice, setFirstChoice] = useState<CardType | null>(null);
@@ -17,16 +19,19 @@ const GameBoard: React.FC = () => {
   useEffect(() => {
     const shuffledCards = [...initialCards, ...initialCards]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card) => ({
+        ...card,
+        id: Math.random().toString(36).substr(2, 9),
+      })); // Convertendo id para string única
     setCards(shuffledCards);
   }, []);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: Timeout;
     if (isActive) {
       timer = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
-      }, 1000);
+      }, 1000) as unknown as Timeout;
     }
     return () => clearInterval(timer);
   }, [isActive]);
@@ -72,7 +77,10 @@ const GameBoard: React.FC = () => {
     setTime(0);
     const shuffledCards = [...initialCards, ...initialCards]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card) => ({
+        ...card,
+        id: Math.random().toString(36).substr(2, 9),
+      }));
     setCards(shuffledCards);
   };
 

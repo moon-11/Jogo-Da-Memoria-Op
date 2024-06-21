@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 
 interface ModalProps {
-  time: string;
+  time: number;
   onReset: () => void;
 }
 

@@ -1,10 +1,9 @@
+// models/cardModels.ts
 export interface CardType {
-  id: number;
+  id: number | string;
   name: string;
   image: string;
   matched: boolean;
-  require?: boolean;
-  image2?: string;
   backImage: string;
   frontImage: string;
 }
