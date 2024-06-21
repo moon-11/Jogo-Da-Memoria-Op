@@ -1,5 +1,4 @@
 import { CardType } from "../../../models/cardModels";
-export { default as initialCards } from "./initialCards";
 
 const initialCards: CardType[] = [
   {
@@ -56,7 +55,6 @@ const initialCards: CardType[] = [
       "https://i.pinimg.com/564x/7b/c5/dc/7bc5dce60d17b7aa600a1dbe974c2408.jpg",
     frontImage: "",
   },
-
   {
     id: 7,
     name: "Robin",
@@ -84,7 +82,6 @@ const initialCards: CardType[] = [
       "https://i.pinimg.com/564x/7b/c5/dc/7bc5dce60d17b7aa600a1dbe974c2408.jpg",
     frontImage: "",
   },
-
   {
     id: 10,
     name: "Chopper",

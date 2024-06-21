@@ -1,6 +1,6 @@
 import React from "react";
-import GameBoard from "./pages/home/gameBoard/gameBoard";
-import "./pages/home/gameBoard/gameBoard.scss";
+import GameBoard from "./pages/home/gameBoard/index";
+import "./pages/home/gameBoard/styles.scss";
 
 const App: React.FC = () => {
   return (

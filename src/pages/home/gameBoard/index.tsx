@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { CardType } from "../../../models/cardModels";
-import Card from "../cards/cards";
-import Modal from "../modal/";
+import Card from "../cards";
+import Modal from "../modal";
 import initialCards from "../utils/initialCards";
-import "./gameBoard.scss";
+import "./styles.scss";
 
 const GameBoard: React.FC = () => {
   const [cards, setCards] = useState<CardType[]>([]);
   const [firstChoice, setFirstChoice] = useState<CardType | null>(null);
   const [secondChoice, setSecondChoice] = useState<CardType | null>(null);
   const [disabled, setDisabled] = useState(false);
-  const [time, setTime] = useState<string>("0");
+  const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
@@ -25,7 +25,7 @@ const GameBoard: React.FC = () => {
     let timer: NodeJS.Timeout;
     if (isActive) {
       timer = setInterval(() => {
-        setTime((prevTime) => (prevTime + 1).toString());
+        setTime((prevTime) => prevTime + 1);
       }, 1000);
     }
     return () => clearInterval(timer);
@@ -91,7 +91,7 @@ const GameBoard: React.FC = () => {
           />
         ))}
       </div>
-      {showModal && <Modal time={time.toString()} onReset={resetGame} />}
+      {showModal && <Modal time={time} onReset={resetGame} />}
     </div>
   );
 };

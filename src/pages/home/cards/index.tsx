@@ -1,7 +1,7 @@
 import React from "react";
 import { CardType } from "../../../models/cardModels";
-import "./../utils/initialCards";
-import "./cards.scss";
+import "../utils/initialCards";
+import "./styles.scss";
 
 interface CardProps {
   card: CardType;
