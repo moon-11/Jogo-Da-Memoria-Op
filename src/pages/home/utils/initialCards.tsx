@@ -4,7 +4,8 @@ const initialCards: CardType[] = [
   {
     id: 1,
     name: "Luffy",
-    image: "../../../assets/img/Luffy.jpg",
+    image:
+      "https://i.pinimg.com/564x/e5/d4/3c/e5d43c951054958eca930c47c28617df.jpg",
     matched: false,
     frontImage: "",
     backImage: "",
